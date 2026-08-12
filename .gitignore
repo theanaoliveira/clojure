@@ -1,0 +1,17 @@
+# Clojure CLI cache
+.cpcache/
+
+# Build output
+target/
+
+# REPL and editor state
+.nrepl-port
+.cider-repl-history
+.calva/
+.lsp/
+.clj-kondo/.cache/
+
+# IDE and operating-system files
+.idea/
+.vscode/
+.DS_Store
