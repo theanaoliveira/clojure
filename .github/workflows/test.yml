@@ -31,6 +31,11 @@ jobs:
             (doseq [file (filter #(.isFile %) (file-seq (io/file \"test\")))]
               (when (.endsWith (.getName file) \".clj\")
                 (load-file (.getPath file))))
-            (let [summary (test/run-all-tests)]
+            (let [test-namespaces (->> (all-ns)
+                                       (filter #(some (comp :test meta)
+                                                      (vals (ns-interns %)))))
+                  summary (binding [test/*test-out* (java.io.StringWriter.)]
+                            (apply test/run-tests test-namespaces))]
+              (println summary)
               (when (pos? (+ (:fail summary) (:error summary)))
                 (System/exit 1)))"

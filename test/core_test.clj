@@ -19,3 +19,5 @@
     (is (= 0 (taxa-de-entrega 200)))
     (is (= 0 (taxa-de-entrega 200.1)))
     (is (= 0 (taxa-de-entrega 201)))))
+
+(run-all-tests)
