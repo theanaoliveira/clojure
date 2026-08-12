@@ -26,7 +26,7 @@ jobs:
 
       - name: Run tests
         run: |
-          clj -Sdeps '{:paths ["src" "test"]}' -M -e "
+          clojure -Sdeps '{:paths ["src" "test"]}' -M -e "
             (require '[clojure.java.io :as io] '[clojure.test :as test])
             (doseq [file (filter #(.isFile %) (file-seq (io/file \"test\")))]
               (when (.endsWith (.getName file) \".clj\")
