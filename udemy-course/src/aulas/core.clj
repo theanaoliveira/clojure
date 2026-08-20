@@ -15,3 +15,7 @@
     (and (> valor 100)
          (< valor 200)) 5
     :else 0))
+
+(defn soma
+  [x y]
+  (+ x y))

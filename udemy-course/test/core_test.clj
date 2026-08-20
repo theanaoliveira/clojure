@@ -19,3 +19,7 @@
     (is (= 0 (taxa-de-entrega 200)))
     (is (= 0 (taxa-de-entrega 200.1)))
     (is (= 0 (taxa-de-entrega 201)))))
+
+(deftest should-sum-values
+  (testing "Deve somar dois valores"
+    (is (= 4 (soma 2 2)))))

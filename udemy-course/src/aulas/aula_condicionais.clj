@@ -42,4 +42,10 @@
     (when (>= idade idade-valida)
       (println "Esta mensagem será exibida apenas para usuários (as) maior que 18 anos"))))
 
-(imprimir-mensagem-boas-vindas 17)
+(defn imprimir-mensagem-boas-vindas*
+  [idade idade-valida]
+  (->> idade
+       (>= idade-valida)
+       (when (println "Esta mensagem será exibida apenas para usuários (as) maior que 18 anos"))))
+
+(imprimir-mensagem-boas-vindas* 17 18)
